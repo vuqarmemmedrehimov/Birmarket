@@ -48,7 +48,7 @@ dropDownMenu.innerHTML = menuItemData.map( item => `
 	<div class="pl-2.5 cursor-pointer">
 		<div class="relative ${item.pad7px ? 'py-1.75' : 'py-2.5'} flex items-center ">
 			<div class="absolute left-0.75 top-1/2 transform -translate-y-1/2 w-6.25">
-				<img src="../img/menuicon/${item.bg}" alt="img" /> 
+				<img src="img/menuicon/${item.bg}" alt="img" /> 
 			</div>
 			<span class="pl-10 block w-[calc(100%-22px)] text-[#1e244d] text-[13px] leading-4">${item.title}</span>
 			<div class="${!item.dropdown ? 'hidden' : ''} h-2.5 flex items-center justify-center transform rotate-270">
@@ -62,7 +62,7 @@ dropDownMenu.innerHTML = menuItemData.map( item => `
 popBrand.innerHTML = popBrandData.map(item => `
     <div class="swiper-slide cursor-pointer overflow-hidden w-full min-h-full h-22!">
         <div class="p-2.5 w-full h-full flex items-center justify-center bg-white">
-            <img src="../img/brand-slider/${item}" alt="" class="max-h-14 md:max-w-25" />
+            <img src="img/brand-slider/${item}" alt="" class="max-h-14 md:max-w-25" />
         </div>
     </div>
 `).join('')
@@ -70,7 +70,7 @@ popBrand.innerHTML = popBrandData.map(item => `
 popSeller.innerHTML = popSellerData.map(item => `
     <div class="swiper-slide cursor-pointer overflow-hidden w-full min-h-full h-22!">
         <div class="p-2.5 w-full h-full flex items-center justify-center bg-white">
-            <img src="../img/seller-slider/${item}" alt="" class="max-h-14 md:max-w-25" />
+            <img src="img/seller-slider/${item}" alt="" class="max-h-14 md:max-w-25" />
         </div>
     </div>
 `).join('')
@@ -79,7 +79,7 @@ actualCategory.innerHTML = actualCategoryData.map(item => `
 
     <div class="md:p-5.5 cursor-pointer">
         <div class="h-34.5 w-34.5 max-w-4/5 md:max-w-30.5 lg:max-w-33.5 m-[0_auto_8px]">
-            <img src="../img/actual/${item.bg}" alt="img" class="w-full object-center object-contain h-full" />
+            <img src="img/actual/${item.bg}" alt="img" class="w-full object-center object-contain h-full" />
         </div>
         <div class="text-[12px] md:text-[13px] text-center text-[#1e244d] leading-[150%] min-h-10 flex justify-center
         items-center">${item.title}</div>
@@ -242,14 +242,14 @@ function showTodayDiscount(type, arr) {
         <div class="swiper-slide bg-white md:border md:border-[#edf1f7] h-auto! rounded-xs">
             <div class="flex flex-col justify-between h-full">
                 <div class="p-[12px_16px_8px] md:p-[24px_24px_16px] relative">
-                    <div onclick="addFavorite('${type}', ${item.id}, 'mainFavorite')" class="cursor-pointer absolute z-99 group top-2.5 right-2.5 md:top-4 md:right-4 size-6 rounded-[50%] bg-transparent flex
+                    <div onclick="addFavorite('${type}', ${item.id}, 'mainFavorite', 'fav${type}${item.id}')" id="fav${type}${item.id}" class="cursor-pointer absolute z-99 group top-2.5 right-2.5 md:top-4 md:right-4 size-6 rounded-[50%] bg-transparent flex
                     items-center justify-center">
                         ${showHeart(type, item.id)}
                     </div>
                     <div class="${item.isNew ? '' : 'hidden'} absolute z-10 top-1 left-1 md:top-6 md:left-6 flex flex-col gap-1.5">
                         <span class="text-[11px] px-1 bg-brand rounded-xs text-white font-semibold leading-4">Yenilik</span>
                     </div>
-                    <a href="../html/detail.htm?type=${type}&id=${item.id}" class="flex flex-col">
+                    <a href="detail.htm?type=${type}&id=${item.id}" class="flex flex-col">
                         <div class="flex flex-col gap-1.5 md:gap-4">
                             <div class="overflow-hidden relative max-md:aspect-square flex items-center w-full md:h-46.5">
                                 <img src="${item.image}" alt="img" class="object-contain w-full h-full" />
@@ -304,7 +304,7 @@ function showBestSeller(type, arr) {
 
         <div class="bg-white md:border md:border-[#edf1f7] h-auto! rounded-xs">
             <div class="p-0 md:p-[24px_24px_16px] relative">
-                <div onclick="addFavorite('${type}', ${item.id}, 'mainFavorite')" class="cursor-pointer absolute z-55 group top-2.5 right-2.5 md:top-4 md:right-4 size-6 rounded-[50%] bg-transparent flex
+                <div onclick="addFavorite('${type}', ${item.id}, 'mainFavorite', 'fav${type}${item.id}')" id="fav${type}${item.id}" class="cursor-pointer absolute z-55 group top-2.5 right-2.5 md:top-4 md:right-4 size-6 rounded-[50%] bg-transparent flex
                 items-center justify-center">
                     ${showHeart(type, item.id)}
                 </div>
@@ -368,7 +368,7 @@ function showNewProduct(type, arr) {
         <div class="swiper-slide bg-white md:border md:border-[#edf1f7] h-auto! rounded-xs">
             <div class="flex flex-col justify-between h-full">
                 <div class="p-[12px_16px_8px] md:p-[24px_24px_16px] relative">
-                    <div onclick="addFavorite('${type}', ${item.id}, 'mainFavorite')" class="cursor-pointer absolute z-55 group top-2.5 right-2.5 md:top-4 md:right-4 size-6 rounded-[50%] bg-transparent flex
+                    <div onclick="addFavorite('${type}', ${item.id}, 'mainFavorite', 'fav${type}${item.id}')" id="fav${type}${item.id}" class="cursor-pointer absolute z-55 group top-2.5 right-2.5 md:top-4 md:right-4 size-6 rounded-[50%] bg-transparent flex
                     items-center justify-center">
                         ${showHeart(type, item.id)}
                     </div>

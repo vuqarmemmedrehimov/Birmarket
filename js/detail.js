@@ -4,6 +4,7 @@ const paramType = params.get('type')
 
 uptBtn('cart', 'detailCart')
 uptBtn('favorite', 'detailFav')
+checkCartButtons()
 
 const detailContainer = document.getElementById('detailContainer')
 
@@ -77,7 +78,7 @@ detailContainer.innerHTML =  `
                         <div class="flex flex-col gap-2">
                             <div class="bg-[linear-gradient(180deg,#7c62e3_13.51%,#53cebf_118.63%)] mr-4 flex flex-col items-center justify-center
                                 h-22.5 w-22.5 rounded-[50%] text-center">
-                                <img src="../img/birCredit.svg" alt="kart" class="w-10" />
+                                <img src="img/birCredit.svg" alt="kart" class="w-10" />
                                 <span class="text-white font-bold text-[16px] leading-6">${product.installment ? product.installment?.months : '0.30'} aylıq</span>
                                 <span class="text-white text-[11px] leading-4">taksit</span>
                             </div>
@@ -108,7 +109,7 @@ detailContainer.innerHTML =  `
                 </div>
                 <div class="mb-6 md:mb-7.5 flex lg:flex-col xl:flex-row">
                     <span class="mb-2.5 md:mb-0 mr-6 lg:mb-4 flex text-[#1e244d] text-[11px] leading-4 ">Məhsulun kodu: 2651766</span>
-                    <div onclick="addFavorite('${paramType}', ${product.id}, 'detailFav')" class="cursor-pointer mr-4 md:mr-6 flex">
+                    <div onclick="addFavorite('${paramType}', ${product.id}, 'detailFav', 'det${paramType}${product.id}')" id="det${paramType}${product.id}" class="cursor-pointer mr-4 md:mr-6 flex">
                         <div class="w-4 h-4 md:w-6 md:h-6 mr-2 md:mr-0 flex justify-center">
                             <svg width="1em" height="1em" viewBox="0 0 1024 1024" aria-hidden="true" fill="currentColor" class="shrink-0
                             text-brand-hover text-[16px]">
@@ -156,7 +157,7 @@ detailContainer.innerHTML =  `
                 <div class="${product.installment ? '' : 'hidden'} -mx-4 border-t-8 border-[#e7e8ed] md:border md:rounded-xs md:mt-4 md:mx-0">
                     <div class="flex flex-col p-4">
                         <div class="flex items-center">
-                            <img src="../img/kb-credit.svg" alt="kredit" class="size-6" />
+                            <img src="img/kb-credit.svg" alt="kredit" class="size-6" />
                             <span class="text-[#1e244d] text-[16px] lg:text-[13px] xl:text-[16px] font-bold ml-2">Kredit kalkulyatoru</span>
                         </div>
                         <div class="flex gap-1 xl:gap-2 mt-4">
@@ -196,7 +197,7 @@ detailContainer.innerHTML =  `
                     </div>
                 </div>
                 <div class="mt-7">
-                    <button onclick="addCart('${paramType}', ${product.id}, 'detailCart')" class="w-full bg-brand hover:bg-brand-hover text-white leading-5 font-bold text-[13px]
+                    <button id="btn${paramType}${product.id}" onclick="addCart('${paramType}', ${product.id}, 'detailCart')" class="w-full bg-brand hover:bg-brand-hover text-white leading-5 font-bold text-[13px]
                     py-3 rounded-xs cursor-pointer transition duration-200">Səbətə əlavə etmək</button>
                 </div>
             </div>

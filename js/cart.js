@@ -69,7 +69,7 @@ function showCart() {
                             </div>
                             <div class="flex flex-wrap items-center justify-start">
                                 <div class="size-6 mr-2">
-                                    <img src="../img/7d5f1b5c1a33fa77e34562f846c92f7a.png" alt="img" class="object-contain" />
+                                    <img src="img/7d5f1b5c1a33fa77e34562f846c92f7a.png" alt="img" class="object-contain" />
                                 </div>
                                 <div class="text-[#1e244d] font-bold text-[13px] flex items-center">
                                     <span>Birmarket.az</span>
@@ -85,7 +85,7 @@ function showCart() {
                             <div class="py-4 md:py-6 flex flex-wrap items-start relative">
                                 <div class="flex md:items-center h-28">
                                     <input checked type="checkbox" class="size-3.5 rounded-xs mr-2.5 appearance-none border border-brand bg-white checked:bg-brand
-                                    checked:bg-[url('../img/u-icon-checked.svg')] checked:bg-contain checked:bg-no-repeat checked:bg-center " />
+                                    checked:bg-[url('img/u-icon-checked.svg')] checked:bg-contain checked:bg-no-repeat checked:bg-center " />
                                 </div>
                                 <div class="mr-2 md:mr-4 size-14 md:size-28">
                                     <img src="${prod.image}" class="size-full object-contain" alt="img" />

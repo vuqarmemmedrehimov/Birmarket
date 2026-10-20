@@ -28,8 +28,8 @@ function showFavorite() {
             return `
                 <div class="bg-white md:border md:border-[#edf1f7] h-full rounded-xs">
                     <div class="flex flex-col h-full justify-between">
-                        <div onclick="deleteFav('${item.type}', ${product.id})" class="p-0 md:p-[24px_24px_16px] relative">
-                            <div class="cursor-pointer absolute z-55 group top-2.5 right-2.5 md:top-4 md:right-4 size-6 rounded-[50%] bg-transparent flex
+                        <div class="p-0 md:p-[24px_24px_16px] relative">
+                            <div onclick="deleteFav('${item.type}', ${product.id})" class="cursor-pointer absolute z-55 group top-2.5 right-2.5 md:top-4 md:right-4 size-6 rounded-[50%] bg-transparent flex
                             items-center justify-center">
                                 <svg width="1em" height="1em" viewBox="0 0 1024 1024" aria-hidden="true" fill="currentColor" class="shrink-0 text-brand group-hover:text-brand-hover
                                 transition duration-200 text-[16px]">
@@ -74,7 +74,7 @@ function showFavorite() {
                             </a>
                         </div>
                         <div class="max-md:p-0 pb-3 mt-2 w-full md:mt-0 self-end! px-4 md:px-6 md:pb-4">
-                            <button onclick="addCart('${item.type}', ${product.id}, 'favCart')" class="text-brand font-bold text-[13px] md:text-[16px] leading-6 py-3 rounded-xs h-9 cursor-pointer w-full bg-[#fef1f7]
+                            <button id="btn${item.type}${product.id}" onclick="addCart('${item.type}', ${product.id}, 'favCart')" class="text-brand font-bold text-[13px] md:text-[16px] leading-6 py-3 rounded-xs h-9 cursor-pointer w-full bg-[#fef1f7]
                             flex items-center justify-center">
                                 <svg width="1em" height="1em" viewBox="0 0 1024 1024" aria-hidden="true" fill="currentColor" class="inline-block shrink-0 mr-2 text-[18px] md:text-[22px]">
                                     <path xmlns="http://www.w3.org/2000/svg" d="M311.878 950.857c45.933 0 83.168-36.766 83.168-82.125s-37.235-82.125-83.168-82.125c-45.933 0-83.168 36.766-83.168 82.125s37.235 82.125 83.168 82.125z"/>
@@ -99,4 +99,5 @@ function deleteFav(type, id) {
     
     showFavorite()
     uptBtn('favorite', 'favSec')
+    checkCartButtons()
 }

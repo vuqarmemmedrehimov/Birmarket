@@ -1148,7 +1148,7 @@ function uptBtn(lst, container) {
     }
 }
 
-function addFavorite(type, id, container) {
+function addFavorite(type, id, container, heartcont) {
     const selectedData = allData[type]
 
     const product = selectedData.find(item => item.id == id )
@@ -1158,19 +1158,22 @@ function addFavorite(type, id, container) {
     let favorites = JSON.parse(localStorage.getItem('favorite')) || []
 
     const exists = favorites.some(item => item.type === type && item.id == id )
-
+    const cont = document.getElementById(heartcont)
     if(!exists) {
         favorites.push({type, id: product.id})
+        cont.innerHTML = hearts[0]
     } else {
         favorites = favorites.filter(item => item.type !== type || item.id != id)
+        cont.innerHTML = hearts[1]
     }
 
     localStorage.setItem('favorite', JSON.stringify(favorites))
     uptBtn('favorite', container)
     showHeart(type, id)
-    showTodayDiscount(type, allData['discounted'])
-    showBestSeller(type, allData['bestSell'])
-    showNewProduct(type, allData['news'])
+    // showTodayDiscount(type, allData['discounted'])
+    // showBestSeller(type, allData['bestSell'])
+    // showNewProduct(type, allData['news'])
+    checkCartButtons()
 }
 
 function addCart(type, id, container) {
@@ -1208,9 +1211,7 @@ function checkCartButtons() {
     const carts = JSON.parse(localStorage.getItem('cart')) || [];
 
     carts.forEach(item => {
-        const btn = document.getElementById(
-            'btn' + item.type + item.id
-        )
+        const btn = document.getElementById('btn' + item.type + item.id)
 
         if (!btn) return;
 
