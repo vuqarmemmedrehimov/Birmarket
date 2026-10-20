@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../font/roboto/roboto-400.40ee641.woff2');
+}
+@import "tailwindcss";
+
+
+@theme {
+    --font-roboto: 'Roboto', sans-serif;
+    --breakpoint-md: 735px;
+    --breakpoint-lg: 991px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-xxl: 1312px;
+    --color-brand: #ea207e;
+    --color-brand-disabled: #bdbfcd;
+    --color-brand-hover: #ff3b96;
+}
+
+@layer components {
+    .container-brand {
+        @apply md:max-w-176 lg:max-w-240 xl:max-w-300 xxl:max-w-7xl md:mx-auto px-4 md:px-0
+    }
+}
+
