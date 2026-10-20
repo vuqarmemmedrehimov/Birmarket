@@ -5,6 +5,7 @@ const favoriteContainer = document.getElementById('favoriteContainer')
 showFavorite()
 uptBtn('cart', 'favCart')
 uptBtn('favorite', 'favSec')
+checkCartButtons()
 
 function showFavorite() {
     let favorites = JSON.parse(localStorage.getItem('favorite')) || []

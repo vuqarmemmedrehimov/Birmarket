@@ -2,10 +2,6 @@ const params = new URLSearchParams(location.search)
 const paramId = +params.get('id')
 const paramType = params.get('type')
 
-uptBtn('cart', 'detailCart')
-uptBtn('favorite', 'detailFav')
-checkCartButtons()
-
 const detailContainer = document.getElementById('detailContainer')
 
 const product = allData[paramType].find(item => item.id === paramId)
@@ -205,3 +201,7 @@ detailContainer.innerHTML =  `
     </div>
 
 `
+
+uptBtn('cart', 'detailCart')
+uptBtn('favorite', 'detailFav')
+checkCartButtons()
